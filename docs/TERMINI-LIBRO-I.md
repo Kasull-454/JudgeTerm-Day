@@ -2,6 +2,9 @@
 
 Ricognizione dei termini, perentori e non, presenti nel Libro I ("Disposizioni generali") del Codice di procedura civile, nel testo vigente dopo la riforma Cartabia (D.Lgs. 149/2022) e il correttivo (D.Lgs. 164/2024).
 
+
+**Termini con sola durata minima o massima.** Nell'app ci sono anche, calcolati sulla durata estrema prevista dalla legge ("(minimo)" o "(massimo)" nell'etichetta): 127-ter (note scritte, minimo 15 gg). Il termine effettivo resta quello scritto nel provvedimento.
+
 ## Fonti e affidabilità
 
 - **Testo letto:** il dispositivo degli articoli su Brocardi.it, che dichiara l'aggiornamento al **20/02/2026**, con riscontri su Studio Cataldi (testo Normattiva aggiornato al 12/06/2026).

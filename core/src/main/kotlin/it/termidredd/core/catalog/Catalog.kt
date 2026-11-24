@@ -303,6 +303,13 @@ object Catalog {
             cpc("281-undecies", "Costituzione del convenuto", 10, BACKWARD),
         ),
         ev(
+            "semplificato_termini_281duodecies", "Prima udienza – semplificato, concessione dei termini",
+            "Data dell'udienza in cui il giudice concede i termini", Category.COGNIZIONE,
+            // Durate massime: il giudice può assegnare termini più brevi. Il secondo termine segue il primo.
+            cpc("281-duodecies", "Memoria: precisare domande ed eccezioni, mezzi di prova (max 20 gg)", 20),
+            cpc("281-duodecies", "Replica e prova contraria (max 20 + 10 gg)", 30),
+        ),
+        ev(
             "udienza_discussione_collegio", "Udienza di discussione orale davanti al collegio",
             "Data dell'udienza di discussione", Category.DECISIONE,
             cpc("275-bis", "Note di precisazione delle conclusioni (discussione orale)", 30, BACKWARD),
@@ -738,6 +745,158 @@ object Catalog {
             "decreto_diritti_aderenti", "Decreto sui diritti degli aderenti",
             "Data di comunicazione del decreto", Category.CLASSE,
             cpc("840-undecies", "Opposizione al tribunale", 30),
+        ),
+        // ===== Termini con sola durata minima o massima (fissati dal giudice, dagli arbitri o dall'ufficio) =====
+        // L'app calcola la data estrema consentita dalla legge: "(massimo)" = la scadenza più lontana possibile,
+        // "(minimo)" = la scadenza più vicina possibile. Il termine effettivo è quello scritto nel provvedimento.
+
+        // Libro I
+        ev(
+            "provvedimento_127ter", "Provvedimento che sostituisce l'udienza con note scritte",
+            "Data del provvedimento", Category.GENERALI,
+            cpc("127-ter", "Deposito delle note scritte (termine non inferiore a 15 gg, minimo)", 15),
+        ),
+
+        // Libro II – cognizione
+        ev(
+            "sospensione_concordata", "Sospensione su istanza di tutte le parti (art. 296)",
+            "Data del provvedimento di sospensione", Category.COGNIZIONE,
+            cpc("296", "Fine della sospensione concordata (massimo 3 mesi)", 3, unit = MONTHS),
+        ),
+        ev(
+            "termine_giudice_307", "Termine del giudice per rinnovare, proseguire o riassumere (art. 307)",
+            "Data del provvedimento che assegna il termine", Category.COGNIZIONE,
+            cpc("307", "Termine assegnato dal giudice (minimo 1 mese)", 1, unit = MONTHS),
+            cpc("307", "Termine assegnato dal giudice (massimo 3 mesi)", 3, unit = MONTHS),
+        ),
+        ev(
+            "cassazione_questione_ufficio", "Ordinanza della Cassazione su questione rilevata d'ufficio",
+            "Data di comunicazione dell'ordinanza", Category.CASSAZIONE,
+            cpc("384", "Osservazioni sulla questione rilevata d'ufficio (minimo)", 20),
+            cpc("384", "Osservazioni sulla questione rilevata d'ufficio (massimo)", 60),
+        ),
+
+        // Libro II – lavoro
+        ev(
+            "lavoro_udienza_rinvio", "Udienza di rinvio – rito del lavoro (art. 420)",
+            "Data dell'udienza di rinvio", Category.LAVORO,
+            cpc("420", "Note difensive (fino a 5 gg prima)", 5, BACKWARD).nf(),
+        ),
+        ev(
+            "lavoro_udienza_discussione_note", "Udienza di discussione con note (art. 429)",
+            "Data dell'udienza in cui il giudice concede le note", Category.LAVORO,
+            cpc("429", "Note difensive prima della sentenza (massimo)", 10).nf(),
+            cpc("429", "Deposito della sentenza nelle cause complesse (massimo, per il giudice)", 60).nf(),
+        ),
+        ev(
+            "lavoro_ctu", "Incarico al CTU con relazione scritta – lavoro",
+            "Data dell'udienza di conferimento", Category.LAVORO,
+            cpc("424", "Relazione scritta del CTU (massimo, non prorogabile)", 20).nf(),
+            cpc("445", "Relazione del CTU in previdenza, se prorogata (massimo)", 60).nf(),
+        ),
+        ev(
+            "lavoro_incompetenza", "Ordinanza di incompetenza – rito del lavoro",
+            "Data dell'ordinanza", Category.LAVORO,
+            cpc("428", "Riassunzione con rito speciale (massimo)", 30).nf(),
+        ),
+        ev(
+            "lavoro_licenziamento_udienza", "Udienza – licenziamenti con termini ridotti (art. 441-bis)",
+            "Data dell'udienza di discussione", Category.LAVORO,
+            cpc("441-bis", "Notifica al convenuto o al terzo, minimo con termini dimezzati", 20, BACKWARD).nf(),
+        ),
+        ev(
+            "lavoro_arbitrato_mandato", "Conferimento del mandato al collegio di conciliazione (art. 412)",
+            "Data del conferimento del mandato", Category.LAVORO,
+            cpc("412", "Emanazione del lodo (massimo)", 60).nf(),
+        ),
+
+        // Libro II – famiglia
+        ev(
+            "ordine_protezione_esecuzione", "Esecuzione dell'ordine di protezione",
+            "Data di esecuzione dell'ordine", Category.FAMIGLIA,
+            cpc("473-bis.70", "Durata dell'ordine di protezione (massimo, salvo proroga)", 1, unit = YEARS).nf().tv(),
+        ),
+
+        // Libro III – esecuzione
+        ev(
+            "conversione_pignoramento", "Ordinanza di conversione del pignoramento",
+            "Data dell'ordinanza", Category.ESECUZIONE,
+            cpc("495", "Rateizzazione della somma (massimo 48 mesi)", 48, unit = MONTHS).nf().tv(),
+        ),
+        ev(
+            "ordinanza_vendita", "Ordinanza di vendita",
+            "Data dell'ordinanza di vendita", Category.ESECUZIONE,
+            cpc("569", "Presentazione delle offerte d'acquisto (minimo)", 90),
+            cpc("569", "Presentazione delle offerte d'acquisto (massimo)", 120),
+            cpc("530", "Versamento rateale del prezzo, beni mobili (massimo 12 mesi)", 12, unit = MONTHS).tv(),
+            cpc("510", "Accantonamento per i creditori senza titolo (massimo 3 anni)", 3, unit = YEARS).nf().tv(),
+        ),
+        ev(
+            "aggiudicazione", "Aggiudicazione dell'immobile",
+            "Data dell'aggiudicazione", Category.ESECUZIONE,
+            cpc("569", "Versamento del saldo prezzo, vendita senza incanto (massimo)", 120),
+            cpc("576", "Versamento del saldo prezzo, vendita con incanto (massimo)", 60),
+            cpc("569-bis", "Versamento del prezzo, vendita diretta", 90),
+        ),
+        ev(
+            "vendita_diretta_ammissibile", "Offerta di vendita diretta dichiarata ammissibile",
+            "Data del provvedimento", Category.ESECUZIONE,
+            cpc("569-bis", "Pubblicità dell'offerta (massimo)", 45),
+            cpc("569-bis", "Ulteriori offerte d'acquisto", 90),
+        ),
+        ev(
+            "vendita_diretta_integrazione", "Prezzo base superiore all'offerta di vendita diretta",
+            "Data del provvedimento", Category.ESECUZIONE,
+            cpc("569-bis", "Integrazione dell'offerta e della cauzione", 10),
+        ),
+        ev(
+            "nuove_condizioni_vendita", "Nuove condizioni o nuovo prezzo di vendita (art. 591)",
+            "Data del provvedimento", Category.ESECUZIONE,
+            cpc("591", "Nuove offerte d'acquisto (minimo)", 60),
+            cpc("591", "Nuove offerte d'acquisto (massimo)", 90),
+        ),
+        ev(
+            "amministrazione_giudiziaria", "Amministrazione giudiziaria dell'immobile",
+            "Data dell'ordinanza", Category.ESECUZIONE,
+            cpc("592", "Durata dell'amministrazione, proroghe comprese (massimo)", 3, unit = YEARS).nf().tv(),
+        ),
+        ev(
+            "sospensione_esecuzione_concordata", "Sospensione dell'esecuzione su istanza dei creditori",
+            "Data dell'ordinanza di sospensione", Category.ESECUZIONE,
+            cpc("624-bis", "Fine della sospensione (massimo 24 mesi)", 24, unit = MONTHS).nf().tv(),
+        ),
+
+        // Libro IV
+        ev(
+            "notifica_di_termine_modificato", "Notifica del decreto ingiuntivo con termine ridotto o aumentato",
+            "Data di notifica del decreto", Category.MONITORIO,
+            cpc("641", "Opposizione, termine ridotto (minimo, Italia)", 10),
+            cpc("641", "Opposizione, termine aumentato (massimo, Italia)", 60),
+            cpc("641", "Opposizione, termine ridotto (minimo, UE)", 20),
+            cpc("641", "Opposizione (minimo, fuori UE)", 30),
+            cpc("641", "Opposizione (massimo, fuori UE)", 120),
+        ),
+        ev(
+            "sfratto_contestazione_canoni", "Ordinanza di pagamento dei canoni non contestati",
+            "Data dell'ordinanza", Category.SFRATTO,
+            cpc("666", "Pagamento della somma non controversa (massimo)", 20).nf(),
+        ),
+        ev(
+            "accettazione_arbitri_proroga", "Lodo con proroga di legge (art. 820)",
+            "Data dell'accettazione della nomina", Category.ARBITRATO,
+            cpc("820", "Pronuncia del lodo con una proroga di 180 gg", 420).tv(),
+        ),
+        ev(
+            "classe_uscita_ricorrenti", "Uscita di tutti i ricorrenti dall'azione di classe",
+            "Data del provvedimento del tribunale", Category.CLASSE,
+            cpc("840-bis", "Prosecuzione da parte degli aderenti (minimo)", 60),
+            cpc("840-bis", "Prosecuzione da parte degli aderenti (massimo)", 90),
+        ),
+        ev(
+            "classe_adesione", "Pubblicazione dell'ordinanza di ammissione o della sentenza (azione di classe)",
+            "Data di pubblicazione sul portale", Category.CLASSE,
+            cpc("840-quinquies", "Adesione all'azione di classe (minimo)", 60),
+            cpc("840-quinquies", "Adesione all'azione di classe (massimo)", 150),
         ),
     )
 

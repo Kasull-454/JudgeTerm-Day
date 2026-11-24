@@ -9,6 +9,9 @@ Ricognizione dei termini del Libro III, "Del processo di esecuzione", nel testo 
 - **opposizioni** (artt. 615–619), compresa la fase di merito e le impugnazioni: esclusa (art. 92 ord. giud.; Cass. 14601/2004, 22484/2014);
 - **processo esecutivo in senso stretto** (precetto, pignoramento, vendita, distribuzione): si applica per la giurisprudenza prevalente. Vale anche per il termine di 90 gg dell'art. 481 e per quello di 45 gg dell'art. 497, ma è **da verificare** caso per caso. Nell'app sono marcati "da verificare".
 
+
+**Termini con sola durata minima o massima.** Nell'app ci sono anche, calcolati sulla durata estrema prevista dalla legge ("(minimo)" o "(massimo)" nell'etichetta): 495 (rate, massimo 48 mesi), 510 (accantonamento, massimo 3 anni), 530 (rate del prezzo, massimo 12 mesi), 569 (offerte da 90 a 120 gg, saldo entro 120 gg), 569-bis (vendita diretta), 576 (saldo entro 60 gg), 591 (offerte da 60 a 90 gg), 592 (amministrazione, massimo 3 anni), 624-bis (sospensione, massimo 24 mesi). Il termine effettivo resta quello scritto nel provvedimento.
+
 ## Titolo I — Titolo esecutivo e precetto (artt. 474–482)
 
 | Art. | Termine | Durata | Dies a quo / ad quem | P | Calc. |

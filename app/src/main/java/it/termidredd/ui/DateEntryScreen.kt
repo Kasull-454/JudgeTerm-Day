@@ -127,7 +127,10 @@ fun DateEntryScreen(onSubmit: (date: LocalDate, halved: Boolean) -> Unit) {
                     label = "Anno", placeholder = (DateInput.inferredYear(day, month) ?: LocalDate.now().year).toString(), value = year, maxDigits = 4,
                     focus = yearFocus, isError = showError, modifier = Modifier.weight(1f),
                     imeAction = ImeAction.Go,
-                    onValue = { year = it; showError = false },
+                    onValue = {
+                        year = it; showError = false
+                        if (it.length == 4) closeKeyboard() // anno completo: come dopo il mese
+                    },
                     onEnter = { submit() },
                     onBackspaceWhenEmpty = { monthFocus.requestFocus() },
                 )

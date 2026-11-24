@@ -63,6 +63,14 @@ class CatalogLibriTest {
     }
 
     @Test
+    fun `281-duodecies, memoria e replica nel semplificato`() {
+        val out = Catalog.byId("semplificato_termini_281duodecies")!!.computeAll(date)
+        assertEquals(listOf(LocalDate.of(2027, 4, 7), LocalDate.of(2027, 4, 17)), out.map { it.result.nominal })
+        val found = TermSearch.filter(Catalog.computeAllGrouped(date), "281").values.flatten()
+        assertTrue(found.any { it.definition.article.startsWith("281-duodecies") })
+    }
+
+    @Test
     fun `termini in anni e lodo arbitrale`() {
         val lodo = Catalog.byId("accettazione_arbitri")!!.computeAll(date).single()
         assertEquals(date.plusDays(240 + 31), lodo.result.nominal) // agosto sospeso

@@ -141,7 +141,7 @@ private fun SearchBar(query: String, onQuery: (String) -> Unit, modifier: Modifi
                 decorationBox = { inner ->
                     Box(Modifier.padding(vertical = 16.dp)) {
                         if (query.isEmpty()) {
-                            Text("Cerca un termine (es. mem, 171, appello)", style = MaterialTheme.typography.bodyLarge, color = colors.onSurfaceVariant)
+                            Text("Cerca un termine (es. 171, 189, 281...)", style = MaterialTheme.typography.bodyLarge, color = colors.onSurfaceVariant)
                         }
                         inner()
                     }

@@ -11,6 +11,9 @@ Ricognizione dei termini del Libro II, "Del processo di cognizione", nel testo v
 - **✅** = calcolabile da una sola data;
 - **Feriale:** la sospensione 1–31 agosto si applica salvo le eccezioni dell'art. 3 L. 742/1969 e dell'art. 92 ord. giud. (vedi in fondo).
 
+
+**Termini con sola durata minima o massima.** Nell'app ci sono anche, calcolati sulla durata estrema prevista dalla legge ("(minimo)" o "(massimo)" nell'etichetta): 281-duodecies (20 + 10 gg), 296 (sospensione concordata, massimo 3 mesi), 307 (termini del giudice da 1 a 3 mesi), 384 (da 20 a 60 gg), 412, 420 (note, fino a 5 gg prima dell'udienza di rinvio), 424 e 445 (relazione del CTU), 428 (riassunzione, massimo 30 gg), 429 (note e sentenza), 441-bis (minimo 20 gg), 473-bis.70 (ordine di protezione, massimo 1 anno). Il termine effettivo resta quello scritto nel provvedimento.
+
 ## Titolo I — Procedimento davanti al tribunale (artt. 163–310)
 
 ### Introduzione e costituzione
@@ -83,7 +86,7 @@ Ricognizione dei termini del Libro II, "Del processo di cognizione", nel testo v
 |---|---|---|---|---|---|
 | 281-undecies, co. 2 | Notifica del ricorso e del decreto; costituzione del convenuto | **40 gg** liberi (Italia) / **60 gg** (estero); costituzione **10 gg prima** | dell'udienza | no (costituzione tardiva = decadenze) | ✅ ← (già nell'app) |
 | 281-undecies, co. 3 | Citazione del terzo chiamato dal convenuto | fissato dal giudice | — | **P** | ➖ |
-| 281-duodecies, co. 4 | Memorie | massimo **20 gg** (domande e prove) + massimo **10 gg** (repliche) | dal provvedimento | **P** | ➖ |
+| 281-duodecies, co. 4 | Memorie | massimo **20 gg** (domande e prove) + massimo **10 gg** (repliche) | dall'udienza in cui il giudice li concede | **P** | ✅ (nell'app con le durate massime: 20 e 30 gg) |
 | 281-terdecies | Sentenza collegiale | **60 gg** | dalla discussione | no (per il giudice) | ✅ |
 
 ### Sospensione, interruzione, estinzione

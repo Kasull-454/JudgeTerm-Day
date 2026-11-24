@@ -45,7 +45,7 @@ App Android: inserisci una data e ottieni tutti i termini processuali del catalo
 
 ## Catalogo attuale
 
-Il catalogo copre i termini **a carico delle parti, con durata fissa e calcolabili da una sola data**, dei quattro libri del c.p.c. (oltre 160 termini, divisi in più di 90 eventi). Sono esclusi i termini fissati dal giudice e quelli per giudice e cancelleria.
+Il catalogo copre i termini **a carico delle parti, con durata fissa e calcolabili da una sola data**, dei quattro libri del c.p.c. (oltre 200 termini, divisi in più di 120 eventi). Ci sono anche i termini di cui la legge fissa solo il minimo o il massimo (es. 281-duodecies, 307, 569): l'app mostra la data estrema, con "(minimo)" o "(massimo)" nell'etichetta. Sono esclusi i termini fissati dal giudice senza limiti di legge e quelli che servono solo a fissare le udienze.
 
 La ricognizione completa, articolo per articolo, compresi i termini esclusi dall'app, è in:
 

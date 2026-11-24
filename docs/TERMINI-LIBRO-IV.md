@@ -10,6 +10,9 @@ Ricognizione dei termini del Libro IV, "Dei procedimenti speciali", nel testo vi
 - **decreto ingiuntivo:** si applica, salvo che la materia sia esclusa (es. crediti di lavoro);
 - **camerali e arbitrato:** si applica.
 
+
+**Termini con sola durata minima o massima.** Nell'app ci sono anche, calcolati sulla durata estrema prevista dalla legge ("(minimo)" o "(massimo)" nell'etichetta): 641 (termine d'opposizione ridotto o aumentato), 666 (pagamento dei canoni, massimo 20 gg), 820 (lodo con proroga, 240 + 180 gg), 840-bis (da 60 a 90 gg), 840-quinquies (adesione, da 60 a 150 gg). Il termine effettivo resta quello scritto nel provvedimento.
+
 ## Titolo I — Procedimenti sommari
 
 ### Capo I — Procedimento d'ingiunzione (artt. 633–656)
