@@ -15,6 +15,18 @@ android {
         versionName = "0.1.0"
     }
 
+    signingConfigs {
+        // Chiave di debug condivisa (nel repo, password standard "android"): gli APK compilati
+        // in locale e dalla GitHub Action hanno la stessa firma e si aggiornano a vicenda.
+        // Non è una chiave segreta: serve solo per i build di debug.
+        getByName("debug") {
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true

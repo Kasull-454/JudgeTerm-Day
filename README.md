@@ -86,6 +86,15 @@ Le voci segnate "dato da verificare" nell'app (481, 497, 617) hanno dubbi noti, 
 | `art/icon/` | Script che genera l'icona adattiva da `giudice-robot.svg`. |
 | `docs/` | Note sul riferimento funzionale e decisioni di progetto. |
 
+## Scaricare l'APK
+
+Una GitHub Action ([build-apk.yml](.github/workflows/build-apk.yml)) compila l'APK di debug:
+
+- **A ogni push su `main`:** l'APK si scarica dalla pagina dell'esecuzione, nel tab *Actions*, sotto *Artifacts → JudgeTermDay-apk* (serve essere loggati su GitHub).
+- **Con un tag `vX.Y.Z`:** l'APK viene allegato anche a una *Release*.
+
+L'APK è firmato con una chiave di debug inclusa nel repo (`app/debug.keystore`). Gli APK di build diverse si aggiornano l'uno sull'altro senza disinstallare.
+
 ## Build
 
 Requisiti: JDK 17+ (va bene il JBR incluso in Android Studio) e Android SDK (platform 36).
