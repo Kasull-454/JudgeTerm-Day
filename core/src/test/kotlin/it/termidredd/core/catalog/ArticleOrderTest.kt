@@ -31,6 +31,7 @@ class ArticleOrderTest {
             val articles = list.map { it.definition.article }
             assertEquals(articles.sortedWith(ArticleOrder), articles)
         }
-        assertTrue(grouped.getValue(Category.COGNIZIONE).first().definition.article.startsWith("50 "))
+        assertTrue(grouped.getValue(Category.GENERALI).first().definition.article.startsWith("47 "))
+        assertTrue(grouped.getValue(Category.COGNIZIONE).first().definition.article.startsWith("38 "))
     }
 }

@@ -45,34 +45,32 @@ App Android: inserisci una data e ottieni tutti i termini processuali del catalo
 
 ## Catalogo attuale
 
-| Categoria | Data inserita = | Termini |
-|---|---|---|
-| Cognizione | udienza di prima comparizione (citazione, rito Cartabia) | 163-bis notifica Italia 120 gg / estero 150 gg; 166 costituzione convenuto 70 gg; 171-ter memorie 40, 20, 10 gg (tutti a ritroso) |
-| Cognizione | udienza del procedimento semplificato | 281-undecies notifica 40 gg (Italia) / 60 gg (estero); costituzione convenuto 10 gg (a ritroso) |
-| Cognizione | conoscenza dell'evento interruttivo | 305 riassunzione 3 mesi |
-| Cognizione | cessazione della causa di sospensione | 297 istanza di fissazione dell'udienza 3 mesi |
-| Cognizione | comunicazione dell'ordinanza di incompetenza | 50 riassunzione 3 mesi |
-| Decisione | udienza di rimessione in decisione | 189 note di precisazione delle conclusioni 60 gg, comparse conclusionali 30 gg, repliche 15 gg (a ritroso) |
-| Impugnazioni | notifica della sentenza | 325 appello 30 gg, cassazione 60 gg |
-| Impugnazioni | pubblicazione della sentenza | 327 termine lungo 6 mesi |
-| Impugnazioni | notifica del ricorso per cassazione | 369 deposito 20 gg; 370 controricorso 40 gg |
-| Impugnazioni | notifica della sentenza (amministrativo / tributario) | 92 c.p.a. appello al CdS 60 gg; 51 D.Lgs. 546/1992 appello CGT 60 gg |
-| Decreto ingiuntivo | notifica del decreto | 641 opposizione 40 gg (Italia), 50 gg (UE), 60 gg (extra UE) |
-| Decreto ingiuntivo | pronuncia del decreto | 644 notifica 60 gg (Italia), 90 gg (estero) |
-| Esecuzione | notifica del precetto | 481 perdita di efficacia 90 gg |
-| Esecuzione | consegna dell'atto di pignoramento | 557 / 518 iscrizione a ruolo 15 gg; 543 iscrizione a ruolo 30 gg |
-| Esecuzione | pignoramento | 497 istanza di vendita 45 gg |
-| Esecuzione | conoscenza dell'atto esecutivo | 617 opposizione agli atti 20 gg |
-| Cautelare | provvedimento cautelare | 669-octies inizio del merito 60 gg; 669-terdecies reclamo 15 gg |
-| Lavoro | udienza di discussione | 416 costituzione del convenuto 10 gg (a ritroso) |
-| Lavoro | notifica della sentenza | 434 appello 30 gg |
+Il catalogo copre i termini **a carico delle parti, con durata fissa e calcolabili da una sola data**, dei quattro libri del c.p.c. (oltre 160 termini, divisi in più di 90 eventi). Sono esclusi i termini fissati dal giudice e quelli per giudice e cancelleria.
 
-Le voci segnate "dato da verificare" nell'app (481, 497, 617) hanno dubbi noti, soprattutto sull'applicazione della sospensione feriale.
+La ricognizione completa, articolo per articolo, compresi i termini esclusi dall'app, è in:
+
+- [docs/TERMINI-LIBRO-I.md](docs/TERMINI-LIBRO-I.md): competenza, ricusazione, udienze da remoto e note scritte, notificazioni, regole generali (artt. 152–155);
+- [docs/TERMINI-LIBRO-II.md](docs/TERMINI-LIBRO-II.md): cognizione, decisione, appello, Cassazione, revocazione, lavoro, famiglia;
+- [docs/TERMINI-LIBRO-III.md](docs/TERMINI-LIBRO-III.md): precetto, pignoramento, vendita, distribuzione, rilascio, opposizioni, estinzione;
+- [docs/TERMINI-LIBRO-IV.md](docs/TERMINI-LIBRO-IV.md): decreto ingiuntivo, sfratto, cautelare e possessorio, camerali, arbitrato, azione di classe.
+
+**Categorie nell'app:** competenza, ricusazione e udienze · cognizione · decisione · appello e revocazione · Cassazione · lavoro · famiglia · esecuzione · opposizioni esecutive · decreto ingiuntivo · sfratto · cautelare · camerali · arbitrato · azione di classe. Si aggiungono i due appelli amministrativo e tributario (art. 92 c.p.a., art. 51 D.Lgs. 546/1992).
+
+La sospensione feriale è esclusa per lavoro, cautelare, sfratto e opposizioni esecutive (art. 3 L. 742/1969, art. 92 ord. giud.). Le voci segnate "dato da verificare" nell'app hanno dubbi noti, soprattutto sulla sospensione feriale:
+
+- 52, ricusazione;
+- 303 e 477, notifica collettiva agli eredi;
+- 481 e 497, inefficacia di precetto e pignoramento;
+- 551-bis, efficacia del pignoramento di crediti;
+- 567, documentazione ipocatastale;
+- 591-ter e 630, reclami nell'esecuzione;
+- 617, opposizione agli atti esecutivi;
+- 820, termine per il lodo.
 
 ## Limiti noti
 
 - **Date passate:** l'app è pensata per date future. Non gestisce regimi storici: niente sospensione feriale 1/8–15/9 in vigore fino al 2014, niente sospensione COVID 2020.
-- **Catalogo parziale:** mancano molti termini, ad esempio famiglia, sfratto, CTU, molti termini di esecuzione e del processo amministrativo e tributario.
+- **Catalogo:** mancano i termini fissati dal giudice, quelli delle leggi speciali (amministrativo, tributario, crisi d'impresa, mediazione) e quelli delle disposizioni di attuazione. I termini "dilatori" (es. 482: esecuzione non prima di 10 giorni) sono mostrati come una scadenza: la data indicata è l'ultimo giorno di attesa.
 - **Santo patrono:** il patrono del foro è supportato nel codice (`ItalianHolidays.extraHolidays`), ma non ancora nell'interfaccia.
 - **Termine "libero":** non è gestito; ad esempio l'art. 163-bis, che è un termine libero, viene calcolato come termine ordinario.
 - **Proroga in agosto:** non è gestito il caso in cui la proroga fa finire la scadenza dentro agosto.

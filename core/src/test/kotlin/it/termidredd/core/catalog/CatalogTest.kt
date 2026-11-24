@@ -32,3 +32,42 @@ class CatalogTest {
         assertEquals(LocalDate.of(2027, 3, 8), terza.result.nominal) // lunedì
     }
 }
+
+class CatalogLibriTest {
+
+    private val date = LocalDate.of(2027, 3, 18)
+
+    @Test
+    fun `ogni categoria ha almeno un evento`() {
+        Category.entries.forEach { c -> assertTrue(Catalog.events.any { it.category == c }, "vuota: $c") }
+    }
+
+    @Test
+    fun `lavoro, cautelare, sfratto e opposizioni esecutive non hanno sospensione feriale`() {
+        val noFeriale = setOf(Category.LAVORO, Category.CAUTELARE, Category.SFRATTO)
+        Catalog.events.filter { it.category in noFeriale }.flatMap { it.terms }
+            .forEach { assertTrue(!it.feriale, "${it.article} ${it.label}") }
+        Catalog.events.flatMap { it.terms }.filter { it.article.startsWith("617 ") }
+            .forEach { assertTrue(!it.feriale) }
+    }
+
+    @Test
+    fun `regolamento di competenza e termine a ritroso della ricusazione`() {
+        val comp = Catalog.byId("incompetenza")!!.computeAll(date)
+        val regolamento = comp.single { it.definition.article.startsWith("47 ") }
+        assertEquals(LocalDate.of(2027, 4, 17), regolamento.result.nominal) // sabato
+        assertEquals(LocalDate.of(2027, 4, 19), regolamento.result.legalDeadline) // lunedì
+        val ric = Catalog.byId("udienza_generica")!!.computeAll(date)
+            .single { it.definition.article.startsWith("52 ") }
+        assertEquals(LocalDate.of(2027, 3, 16), ric.result.legalDeadline)
+    }
+
+    @Test
+    fun `termini in anni e lodo arbitrale`() {
+        val lodo = Catalog.byId("accettazione_arbitri")!!.computeAll(date).single()
+        assertEquals(date.plusDays(240 + 31), lodo.result.nominal) // agosto sospeso
+
+        val eredi = Catalog.byId("morte_parte")!!.computeAll(date).single()
+        assertEquals(LocalDate.of(2028, 3, 18), eredi.result.nominal)
+    }
+}

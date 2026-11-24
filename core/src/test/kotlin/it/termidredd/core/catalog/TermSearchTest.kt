@@ -16,7 +16,8 @@ class TermSearchTest {
         assertTrue(found.isNotEmpty())
         assertTrue(found.all { "memori" in it.lowercase() })
         assertTrue("Memorie di replica" in found)
-        assertEquals(4, found.size) // 3 x 171-ter + 189 n. 3
+        assertTrue("Memorie illustrative (camera di consiglio)" in found)
+        assertTrue("Memoria del convenuto" in found)
     }
 
     @Test
