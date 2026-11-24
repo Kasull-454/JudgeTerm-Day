@@ -1,0 +1,6 @@
+<resources>
+    <!-- Sfondo Chiyuki già durante l'avvio, per evitare il lampo bianco. -->
+    <style name="Theme.JudgeTermDay" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/chiyuki_night</item>
+    </style>
+</resources>
