@@ -90,6 +90,7 @@ Una GitHub Action ([build-apk.yml](.github/workflows/build-apk.yml)) compila l'A
 
 - **A ogni push su `main`:** l'APK si scarica dalla pagina dell'esecuzione, nel tab *Actions*, sotto *Artifacts → JudgeTermDay-apk* (serve essere loggati su GitHub).
 - **Con un tag `vX.Y.Z`:** l'APK viene allegato anche a una *Release*.
+- **Versione:** `versionName` e `versionCode` si ricavano dal tag più recente (`v0.2.1` → `0.2.1` / `201`, cioè X·10000 + Y·100 + Z). Ogni nuovo tag produce quindi un aggiornamento che Android e i repository F-Droid riconoscono.
 
 L'APK è firmato con una chiave di debug inclusa nel repo (`app/debug.keystore`). Gli APK di build diverse si aggiornano l'uno sull'altro senza disinstallare.
 
